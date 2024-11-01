@@ -9,9 +9,12 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@ant-design/cssinjs": "^1.18.0",
+    "@ant-design/happy-work-theme": "^1.0.0",
+    "antd": "^5.11.5",
+    "next": "15.0.2",
     "react": "19.0.0-rc-02c0e824-20241028",
-    "react-dom": "19.0.0-rc-02c0e824-20241028",
-    "next": "15.0.2"
+    "react-dom": "19.0.0-rc-02c0e824-20241028"
   },
   "devDependencies": {
     "eslint": "^8",
