@@ -1,6 +1,7 @@
 import localFont from "next/font/local";
 import "./globals.css";
 import StyledComponentsRegistry from "@/lib/AntRegistry";
+import { ClerkProvider } from "@clerk/nextjs";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -20,10 +21,25 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
-      <body className={`${geistSans.variable} ${geistMono.variable}`}>
-        <StyledComponentsRegistry>{children}</StyledComponentsRegistry>
-      </body>
-    </html>
+    <ClerkProvider
+      appearance={{
+        signIn: {
+          variables: {
+            colorPrimary: "#f9AA11",
+          },
+        },
+        signUp: {
+          variables: {
+            colorPrimary: "#f9AA11",
+          },
+        },
+      }}
+    >
+      <html lang="en">
+        <body className={`${geistSans.variable} ${geistMono.variable}`}>
+          <StyledComponentsRegistry>{children}</StyledComponentsRegistry>
+        </body>
+      </html>
+    </ClerkProvider>
   );
 }
